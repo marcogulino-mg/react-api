@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header>
-      <h1>Header Title</h1>
+      <h1>Lista Posts</h1>
     </header>
   );
 }
