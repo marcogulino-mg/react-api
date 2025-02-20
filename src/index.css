@@ -37,6 +37,17 @@ h1 {
   line-height: 1.1;
 }
 
+ul {
+  list-style: none;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  text-align: initial;
+  gap: 30px;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;

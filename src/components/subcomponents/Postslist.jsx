@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 // IMPORT Post.jsx
 import Post from "./Post";
@@ -12,11 +12,11 @@ export default function Postslist() {
     axios.get("http://localhost:3000/posts").then((res) => setPost(res.data));
   }
 
+  useEffect(fetchPost, [post]);
+
   return (
     <div>
-      <ul>
-        <Post />
-      </ul>
+      <Post postList={post} />
     </div>
   );
 }
