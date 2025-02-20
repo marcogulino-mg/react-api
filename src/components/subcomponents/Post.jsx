@@ -1,7 +1,3 @@
-export default function Post() {
-  return (
-    <li>
-      <span>test</span>
-    </li>
-  );
+export default function Post(props) {
+  return <li>{}</li>;
 }

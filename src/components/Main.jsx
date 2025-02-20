@@ -1,10 +1,10 @@
 // IMPORT Postlists.jsx
-import Postlists from "./subcomponents/Postlists";
+import Postslist from "./subcomponents/Postslist";
 
 export default function Main() {
   return (
     <main>
-      <Postlists />
+      <Postslist />
     </main>
   );
 }
