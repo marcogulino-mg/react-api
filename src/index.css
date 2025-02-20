@@ -37,6 +37,12 @@ h1 {
   line-height: 1.1;
 }
 
+h2 {
+  margin-top: 40px;
+  font-size: 30px;
+  color: red;
+}
+
 ul {
   list-style: none;
 }
