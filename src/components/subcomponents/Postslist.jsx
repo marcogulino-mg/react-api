@@ -44,6 +44,8 @@ export default function Postslist() {
     setNewPost(initialPost);
   }
 
+  function removePost(i) {}
+
   // Funzione che cambierà i values degli elementi del form
   // sfruttando l'evento onChange
   function handleFormData(e) {
@@ -58,7 +60,7 @@ export default function Postslist() {
   }
 
   // Render the list of posts requested by the API when the page is loaded
-  useEffect(showsPosts, [post]);
+  useEffect(showsPosts, []);
 
   return (
     <div>
@@ -96,7 +98,7 @@ export default function Postslist() {
         />
         <button className="addpost-btn">Crea Post</button>
       </form>
-      <Post postList={post} />
+      <Post postList={post} onClick={removePost} />
     </div>
   );
 }

@@ -8,6 +8,7 @@ export default function Post(props) {
             <p>{post.content}</p>
             <img src={post.image} alt={post.title} />
             <p>{post.tags.join(", ")}</p>
+            <button onClick={() => props.onClick(post.id)}>Remove</button>
           </li>
         ))
       ) : (
