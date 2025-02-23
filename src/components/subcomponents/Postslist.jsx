@@ -18,6 +18,7 @@ export default function Postslist() {
   const [newPost, setNewPost] = useState(initialPost);
 
   // Funzione che svolge la chiamata AJAX tramite la libreria Axios
+  // Stampa Elenco Posts (GET)
   function showsPosts() {
     axios
       .get("http://localhost:3000/posts")
@@ -25,10 +26,28 @@ export default function Postslist() {
       .catch((err) => console.log(err));
   }
 
+  // Funzione che svolge la chiamata AJAX tramite la libreria Axios
+  // Aggiunta Post (POST)
+  function addPost(e) {
+    //Prevengo il refresh della pagina a causa del submit del form
+    e.preventDefault();
+
+    //Invio dati all'API con Method POST
+    axios
+      .post("http://localhost:3000/posts", newPost)
+      .then((res) => {
+        setPost((currentPost) => [...currentPost, res.data]);
+      })
+      .catch((err) => console.log(err));
+
+    // Reset del form
+    setNewPost(initialPost);
+  }
+
   // Funzione che cambierà i values degli elementi del form
   // sfruttando l'evento onChange
   function handleFormData(e) {
-    //In caso di value del campo tags
+    // In caso di value del campo tags
     const value =
       e.target.name === "tags" ? e.target.value.split(",") : e.target.value;
 
@@ -38,12 +57,12 @@ export default function Postslist() {
     }));
   }
 
-  //Render the list of posts requested by the API when the page is loaded
+  // Render the list of posts requested by the API when the page is loaded
   useEffect(showsPosts, [post]);
 
   return (
     <div>
-      <form action="#" className="add-post">
+      <form action="#" className="add-post" onSubmit={addPost}>
         <label htmlFor="title">Title </label>
         <input
           type="text"
