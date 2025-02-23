@@ -44,7 +44,18 @@ export default function Postslist() {
     setNewPost(initialPost);
   }
 
-  function removePost(i) {}
+  function removePost(i) {
+    const updatePosts = post.filter((post) => {
+      return post.id !== i;
+    });
+
+    axios
+      .delete(`http://localhost:3000/posts/${i}`)
+      .then((res) => {
+        setPost(updatePosts);
+      })
+      .catch((err) => console.log(err));
+  }
 
   // Funzione che cambierà i values degli elementi del form
   // sfruttando l'evento onChange
