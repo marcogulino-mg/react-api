@@ -85,3 +85,20 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* MAIN */
+.add-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-post > input,
+textarea {
+  width: 500px;
+  height: 30px;
+}
+
+.addpost-btn {
+  margin: 20px 0 20px 0;
+}
